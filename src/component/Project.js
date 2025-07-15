@@ -1,6 +1,5 @@
 import '../css/project.css';
 import { useEffect, useState } from 'react';
-import ProjectPage from '../pages/ProjectPage';
 
 const projects = [
     {
