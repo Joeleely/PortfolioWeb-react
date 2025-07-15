@@ -50,7 +50,7 @@ const About = () => {
                 <div className={`about-text ${isVisible ? 'slide-text' : ''}`}>
                     <h2>Varanyu Leelasopin</h2>
                     <p>Age: {age}</p>
-                    <p className='birth'>Birth: 10 March 2003&nbsp;|&nbsp; <BirthdayCountdown /></p>
+                    <div className='birth'><p>Birth: 10 March 2003&nbsp;|&nbsp;</p><BirthdayCountdown /></div>
                     <p>Bachelor Degree at KMUTT</p>
                     <p>Computer-Science</p>
                     <button className="toggle-button" onClick={() => setShowMore(!showMore)}>
