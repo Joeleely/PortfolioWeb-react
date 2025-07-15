@@ -6,7 +6,15 @@ const Header = () => {
   const [isTop, setIsTop] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
 
+  const scrollToSection = (sectionId) => {
+  const section = document.getElementById(sectionId);
+  if (section) {
+    section.scrollIntoView({ behavior: 'smooth' });
+  }
+};
+
   const handleClick = (section) => {
+    scrollToSection(section);
     setActiveLink(section);
   };
 
@@ -33,7 +41,6 @@ const Header = () => {
 
       <nav className="navbar">
         <a
-          href="#home"
           style={{ '--i': 1 }}
           onClick={() => handleClick('home')}
           className={`hover-underline-animation ${activeLink === 'home' ? 'active' : ''}`}
@@ -41,7 +48,6 @@ const Header = () => {
           Home
         </a>
         <a
-          href="#about"
           style={{ '--i': 2 }}
           onClick={() => handleClick('about')}
           className={`hover-underline-animation ${activeLink === 'about' ? 'active' : ''}`}
@@ -49,7 +55,6 @@ const Header = () => {
           About
         </a>
         <a
-          href="#projects"
           style={{ '--i': 3 }}
           onClick={() => handleClick('projects')}
           className={`hover-underline-animation ${activeLink === 'projects' ? 'active' : ''}`}
@@ -57,7 +62,6 @@ const Header = () => {
           Projects
         </a>
         <a
-          href="#gallery"
           style={{ '--i': 4 }}
           onClick={() => handleClick('gallery')}
           className={`hover-underline-animation ${activeLink === 'gallery' ? 'active' : ''}`}

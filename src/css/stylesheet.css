@@ -53,6 +53,7 @@ body {
     text-decoration: none;
     font-weight: 600;
     cursor: default;
+    cursor: pointer;
 }
 
 .navbar a {
@@ -66,6 +67,7 @@ body {
     opacity: 0;
     animation: slideTop .7s ease forwards;
     animation-delay: calc(.2s * var(--i));
+    cursor: pointer;
 }
 
 .navbar a.active {
