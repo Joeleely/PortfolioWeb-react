@@ -54,9 +54,11 @@ body {
     font-weight: 600;
     cursor: default;
     cursor: pointer;
+    border: none;
+    background: transparent;
 }
 
-.navbar a {
+.navbar button {
     display: inline-block;
     font-size: 25px;
     color: #fff;
@@ -68,9 +70,11 @@ body {
     animation: slideTop .7s ease forwards;
     animation-delay: calc(.2s * var(--i));
     cursor: pointer;
+    background: transparent;
+    border: none;
 }
 
-.navbar a.active {
+.navbar button.active {
     color: #0ef;
 }
 
@@ -100,7 +104,7 @@ body {
     text-underline-position: under;
 }
 
-.navbar a:hover {
+.navbar button:hover {
     color: #0ef;
 }
 

@@ -37,37 +37,37 @@ const Header = () => {
 
   return (
     <header className={`header ${showHeader ? 'show' : 'hide'} ${isTop ? 'transparent' : ''}`}>
-      <a href="" className="logo">Joevry</a>
+      <button onClick={() => window.location.reload()} className="logo">Joevry</button>
 
       <nav className="navbar">
-        <a
+        <button
           style={{ '--i': 1 }}
           onClick={() => handleClick('home')}
           className={`hover-underline-animation ${activeLink === 'home' ? 'active' : ''}`}
         >
           Home
-        </a>
-        <a
+        </button>
+        <button
           style={{ '--i': 2 }}
           onClick={() => handleClick('about')}
           className={`hover-underline-animation ${activeLink === 'about' ? 'active' : ''}`}
         >
           About
-        </a>
-        <a
+        </button>
+        <button
           style={{ '--i': 3 }}
           onClick={() => handleClick('projects')}
           className={`hover-underline-animation ${activeLink === 'projects' ? 'active' : ''}`}
         >
           Projects
-        </a>
-        <a
+        </button>
+        <button
           style={{ '--i': 4 }}
           onClick={() => handleClick('gallery')}
           className={`hover-underline-animation ${activeLink === 'gallery' ? 'active' : ''}`}
         >
           Gallery
-        </a>
+        </button>
       </nav>
     </header>
   );
