@@ -1,23 +1,35 @@
-import logo from './logo.svg';
-import './App.css';
+import './css/stylesheet.css';
+import Header from './component/Header';
+import Home from './component/Home';
+import About from './component/About';
+import Project from './component/Project';
+import Contact from './component/Contact';
+import ProjectPage from './pages/ProjectPage';
+import { useState } from 'react';
+import GalleryPage from './pages/GalleryPage';
+import Gallery from './component/Gallery';
 
 function App() {
+  const [page, setPage] = useState('home');
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      {/* <Header setPage={setPage}/> */}
+      {page === 'home' ? (
+        <>
+          <div className='bodyInfo'>
+            <Header setPage={setPage}/>
+            <Home />
+            <About />
+            <Project setPage={setPage} />
+            <Gallery setPage={setPage}/>
+          </div>
+          <Contact />
+        </>
+      ) : page === 'projects' ? (
+        <ProjectPage setPage={setPage} />
+      ) : (
+        <GalleryPage setPage={setPage}/>
+      )}
     </div>
   );
 }

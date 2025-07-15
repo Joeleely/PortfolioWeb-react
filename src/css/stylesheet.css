@@ -1,0 +1,170 @@
+html, body {
+  overflow-x: hidden;
+  width: 100%;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'poppins', sans-serif;
+}
+
+body {
+    color: #ffffff;
+    background-color: #081c2b;
+    overflow-x: hidden;
+}
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px;
+    background: transparent;
+    background: rgba(8, 27, 41, 0.5);
+    backdrop-filter: blur(4px);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+    margin: auto;
+    transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out;
+}
+
+.header.hide {
+  transform: translateY(-100%);
+}
+
+.header.show {
+  transform: translateY(0);
+}
+
+.header.transparent {
+  background-color: transparent;
+  backdrop-filter: none;
+}
+
+.logo {
+    position: relative;
+    font-size: 25px;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+    cursor: default;
+}
+
+.navbar a {
+    display: inline-block;
+    font-size: 25px;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+    margin-left: 30px;
+    transition: 1s;
+    opacity: 0;
+    animation: slideTop .7s ease forwards;
+    animation-delay: calc(.2s * var(--i));
+}
+
+.navbar a.active {
+    color: #0ef;
+}
+
+.hover-underline-animation {
+    display: inline-block;
+    position: relative;
+    color: #0ef;
+}
+
+.hover-underline-animation::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #0ef;
+    transform-origin: bottom right;
+    transition: transform 0.25s ease-out;
+    text-underline-position: under;
+}
+
+.hover-underline-animation:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+    text-underline-position: under;
+}
+
+.navbar a:hover {
+    color: #0ef;
+}
+
+.home {
+    margin-top: 20vh;
+}
+
+
+@keyframes slideTop {
+    0% {
+        transform: translateY(50px);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateY(0px);
+        opacity: 1;
+    }
+}
+
+@keyframes slideLeftss {
+    0% {
+        transform: translateX(100px);
+        opacity: 0;
+    }
+
+    50% {
+        transform: translateX(-105px);
+    }
+
+    100% {
+        transform: translateX(0px);
+        opacity: 1;
+    }
+}
+
+@keyframes slideLefts {
+    0% {
+        transform: translateX(200px);
+        opacity: 0;
+    }
+
+    50% {
+        transform: translateX(0px);
+    }
+
+    100% {
+        transform: translateX(0px);
+        opacity: 1;
+    }
+}
+
+@media (max-width: 768px) {
+  .logo {
+    display: none;
+  }
+
+  .navbar {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
+  .navbar a {
+    font-size: 1rem;
+    margin-left: 15px;
+    margin-right: 15px;
+  }
+}
