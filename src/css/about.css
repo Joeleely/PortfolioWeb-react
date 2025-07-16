@@ -29,7 +29,7 @@
 
 .about-text {
     max-width: 500px;
-    text-align: left;
+    text-align: start;
     line-height: 2;
     word-wrap: break-word;
     overflow-wrap: break-word;
@@ -37,6 +37,7 @@
 
 .about-text h2 {
     margin-bottom: 1rem;
+    text-align: center;
 }
 
 .about-text p {
