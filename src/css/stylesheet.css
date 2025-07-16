@@ -168,7 +168,7 @@ body {
     justify-content: center;
   }
 
-  .navbar a {
+  .navbar button {
     font-size: 1rem;
     margin-left: 15px;
     margin-right: 15px;
