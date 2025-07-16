@@ -3,7 +3,7 @@ import BirthdayCountdown from './BirthdayCountdown';
 import joePhoto from '../images/joe_photo.jpg';
 import React, { useEffect, useRef, useState } from 'react';
 import { SiAdobepremierepro, SiUbuntu, SiMysql } from 'react-icons/si';
-import { FaGuitar } from "react-icons/fa6";
+import { FaGuitar, FaGolang } from "react-icons/fa6";
 import { FaBookOpen, FaHeadphones } from "react-icons/fa";
 import { CgGym } from "react-icons/cg";
 
@@ -76,6 +76,7 @@ const About = () => {
                                 <i className="bx bxl-react" title="React"></i>
                                 <i className="bx bxl-nodejs" title="Nodejs"></i>
                                 <i className="bx bxl-flutter" title="Flutter"></i>
+                                <FaGolang className="skill-icon" title="Golang"/>
                                 <i className="bx bxl-docker" title="Docker"></i>
                                 <i className="bx bxl-mongodb" title="MongoDB"></i>
                                 <i className="bx bxl-postgresql" title="PostgreSQL"></i>
@@ -122,6 +123,7 @@ const About = () => {
                                     <div className='info-icon'><i className="bx bxl-react" title="React"><p>React</p></i></div>
                                     <div className='info-icon'><i className="bx bxl-nodejs" title="Nodejs"><p>Nodejs</p></i></div>
                                     <div className='info-icon'><i className="bx bxl-flutter" title="Flutter"><p>Flutter</p></i></div>
+                                    <div className='info-icon-react'><FaGolang className="skill-icon" title="Golang"/><span>Golang</span></div>
                                     <div className='info-icon'><i className="bx bxl-docker" title="Docker"><p>Docker</p></i></div>
                                     <div className='info-icon'><i className="bx bxl-mongodb" title="MongoDB"><p>MongoDB</p></i></div>
                                     <div className='info-icon'><i className="bx bxl-postgresql" title="PostgreSQL"><p>PostgreSQL</p></i></div>
