@@ -78,7 +78,6 @@ const About = () => {
                                 <i className="bx bxl-flutter" title="Flutter"></i>
                                 <FaGolang className="skill-icon" title="Golang"/>
                                 <i className="bx bxl-docker" title="Docker"></i>
-                                <i className="bx bxl-mongodb" title="MongoDB"></i>
                                 <i className="bx bxl-postgresql" title="PostgreSQL"></i>
                                 <SiUbuntu className="skill-icon" title="Ubuntu" />
                                 <SiMysql className="skill-icon" title="MySQL" />
@@ -125,7 +124,6 @@ const About = () => {
                                     <div className='info-icon'><i className="bx bxl-flutter" title="Flutter"><p>Flutter</p></i></div>
                                     <div className='info-icon-react'><FaGolang className="skill-icon" title="Golang"/><span>Golang</span></div>
                                     <div className='info-icon'><i className="bx bxl-docker" title="Docker"><p>Docker</p></i></div>
-                                    <div className='info-icon'><i className="bx bxl-mongodb" title="MongoDB"><p>MongoDB</p></i></div>
                                     <div className='info-icon'><i className="bx bxl-postgresql" title="PostgreSQL"><p>PostgreSQL</p></i></div>
                                     <div className='info-icon-react'><SiUbuntu className="skill-icon" title="Ubuntu" /><span>Ubuntu</span></div>
                                     <div className='info-icon-react'><SiMysql className="skill-icon" title="MySQL" /><span>MySQL</span></div>                                
