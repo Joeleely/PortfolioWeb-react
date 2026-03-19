@@ -1,7 +1,7 @@
 .gallery {
   padding: 5vh 5vw;
-  background-color: #081c2b;
-  color: white;
+  background: linear-gradient(180deg, var(--bg0), var(--bg1));
+  color: var(--text);
   min-height: 100vh;
   box-sizing: border-box;
 }
@@ -9,14 +9,14 @@
 .gallery-title {
   text-align: center;
   font-size: 2.5rem;
-  color: white;
+  color: var(--accent-2);
 }
 
 .quotes {
   text-align: center;
   margin-top: 1rem;
   margin-bottom: 2rem;
-  color: rgb(172, 172, 172);
+  color: var(--muted);
 }
 
 .back-button {
@@ -43,19 +43,20 @@
 .masonry-item {
   margin-bottom: 1vh;
   break-inside: avoid;
-  border-radius: 10px;
+  border-radius: var(--radius);
   overflow: hidden;
   cursor: pointer;
   transition: transform 0.3s;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-  background-color: #0e2433;
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.28);
+  background-color: var(--card);
+  border: 1px solid rgba(255, 255, 255, 0.12);
 }
 
 .masonry-item img {
   width: 100%;
   height: auto;
   display: block;
-  border-radius: 10px;
+  border-radius: calc(var(--radius) - 4px);
   transition: transform 0.3s ease;
 }
 
@@ -70,7 +71,9 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(10, 10, 10, 0.9);
+  background:
+    radial-gradient(700px 380px at 50% 20%, rgba(0, 238, 255, 0.10), transparent 60%),
+    rgba(10, 10, 10, 0.92);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -82,7 +85,7 @@
   max-width: 90%;
   max-height: 90%;
   border-radius: 12px;
-  box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+  box-shadow: 0 0 30px rgba(0, 238, 255, 0.12);
 }
 
 .close-modal {
@@ -133,9 +136,9 @@
   bottom: 4vh;
   left: 50%;
   transform: translateX(-50%);
-  background-color: rgba(128, 128, 128, 0.5); /* gray with 50% opacity */
+  background-color: rgba(0, 238, 255, 0.10);
+  border: 1px solid rgba(0, 238, 255, 0.25);
   color: white;
-  border: none;
   border-radius: 50px;
   padding: 0.8rem 1.5rem;
   font-size: 1.2rem;
@@ -147,7 +150,7 @@
 }
 
 .scroll-to-top:hover {
-  background-color: rgba(128, 128, 128, 0.8);
+  background-color: rgba(0, 238, 255, 0.18);
 }
 
 @media (max-width: 1400px) {

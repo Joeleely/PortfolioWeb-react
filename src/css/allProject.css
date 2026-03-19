@@ -17,6 +17,8 @@
     display: inline-block;
     margin-bottom: 1rem;
     transform-origin: left center;
+    padding: 0.2rem 0.5rem;
+    border-radius: 10px;
 }
 
 .back-button:hover {
@@ -26,8 +28,8 @@
 
 .project-page {
   padding: 5vh 5vw;
-  background-color: #081c2b;
-  color: white;
+  background: linear-gradient(180deg, var(--bg0), var(--bg1));
+  color: var(--text);
   min-height: 80vh;
   display: flex;
   flex-direction: column;
@@ -42,11 +44,11 @@
 
 .tab {
   padding: 0.5rem 1rem;
-  border: 1px solid #ffffff30;
-  background-color: #ffffff10;
-  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  background-color: rgba(255, 255, 255, 0.06);
+  color: var(--text);
   cursor: pointer;
-  border-radius: 5px;
+  border-radius: 12px;
   transition: background 0.3s ease;
 }
 
@@ -56,7 +58,7 @@
 
 .tab.active {
   background-color: #ffcc00;
-  color: #081c2b;
+  color: #06111a;
   font-weight: bold;
 }
 
@@ -68,15 +70,17 @@
 }
 
 .project-card {
-  background-color: #2a2a2a;
+  background-color: var(--card);
+  border: 1px solid rgba(255, 255, 255, 0.14);
   padding: 1.5rem;
-  border-radius: 10px;
+  border-radius: var(--radius);
   width: 250px;
   min-height: 250px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  transition: transform 0.3s;
+  transition: transform 0.3s, box-shadow 0.3s;
+  backdrop-filter: blur(10px);
 }
 
 .project-content {
@@ -87,6 +91,7 @@
 
 .project-card:hover {
   transform: translateY(-5px);
+  box-shadow: var(--shadow);
 }
 
 .project-card h2 {
@@ -96,8 +101,8 @@
 
 .circle-button {
   background-color: transparent;
-  color: white;
-  border: 1px solid #ffffff40;
+  color: var(--text);
+  border: 1px solid rgba(255, 255, 255, 0.30);
   border-radius: 50%;
   width: 40px;
   height: 40px;
@@ -127,7 +132,7 @@
   opacity: 0;
   transition: max-width 0.5s ease, opacity 0.5s ease;
   overflow: hidden;
-  color: white;
+  color: var(--text);
   white-space: nowrap;
 }
 
@@ -135,8 +140,8 @@
   width: auto;
   padding: 0 1.2rem;
   height: 40px;
-  border-radius: 8px;
-  background-color: #ffffff20;
+  border-radius: 12px;
+  background-color: rgba(0, 238, 255, 0.12);
   gap: 0.5rem;
 }
 
@@ -146,11 +151,11 @@
 }
 
 .circle-button.github:hover {
-  background-color: #333;
+  background-color: rgba(255, 255, 255, 0.10);
 }
 
 .circle-button.web:hover {
-  background-color: #005f9e;
+  background-color: rgba(0, 95, 158, 0.30);
 }
 
 .project-header {

@@ -1,19 +1,43 @@
+/* Global design tokens + premium baseline. */
+:root {
+  --bg0: #081c2b;
+  --bg1: #01111d;
+  --card: rgba(255, 255, 255, 0.06);
+  --card2: rgba(255, 255, 255, 0.10);
+  --border: rgba(255, 255, 255, 0.12);
+  --text: rgba(255, 255, 255, 0.92);
+  --muted: rgba(255, 255, 255, 0.70);
+  --accent: #0ef;
+  --accent-2: #ffcc00;
+  --radius: 16px;
+  --shadow: 0 14px 40px rgba(0, 0, 0, 0.35);
+}
+
 html, body {
   overflow-x: hidden;
   width: 100%;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'poppins', sans-serif;
 }
 
 body {
-    color: #ffffff;
-    background-color: #081c2b;
+    color: var(--text);
+    background:
+      radial-gradient(900px 450px at 15% -10%, rgba(0, 238, 255, 0.14), transparent 55%),
+      radial-gradient(650px 380px at 85% 10%, rgba(255, 204, 0, 0.10), transparent 60%),
+      linear-gradient(180deg, var(--bg0), var(--bg1));
     overflow-x: hidden;
+    font-family: "Space Grotesk", "Poppins", system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 .header {
@@ -21,10 +45,9 @@ body {
     top: 0;
     left: 0;
     width: 100%;
-    padding: 20px;
-    background: transparent;
-    background: rgba(8, 27, 41, 0.5);
-    backdrop-filter: blur(4px);
+    padding: 16px clamp(16px, 4vw, 28px);
+    background: rgba(8, 27, 41, 0.45);
+    backdrop-filter: blur(10px);
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -110,6 +133,22 @@ body {
 
 .home {
     margin-top: 20vh;
+}
+
+/* Shared focus styling. */
+a:focus-visible {
+  outline: 2px solid rgba(0, 238, 255, 0.55);
+  outline-offset: 3px;
+  border-radius: 10px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
 }
 
 
