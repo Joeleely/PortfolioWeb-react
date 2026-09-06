@@ -1,0 +1,24 @@
+.parallax-background { position: absolute; inset: 0; overflow: hidden; pointer-events: none; z-index: 0; }
+.parallax-background > div { position: absolute; pointer-events: none; }
+.parallax-photo {
+  inset: -80px -24px;
+  background: url('../images/joe_background.jpg') center / cover no-repeat;
+  transform: translate3d(calc(var(--parallax-x, 0px) * -0.5), calc(var(--parallax-y, 0px) * -0.5 + var(--parallax-scroll, 0px)), 0);
+}
+.parallax-wash { inset: 0; background: linear-gradient(110deg, rgba(1, 17, 29, 0.93), rgba(1, 17, 29, 0.8)); }
+.parallax-glow {
+  inset: -80px;
+  background: radial-gradient(ellipse at 78% 35%, rgba(0, 238, 255, 0.12), transparent 50%), radial-gradient(ellipse at 10% 80%, rgba(87, 113, 217, 0.08), transparent 45%);
+  transform: translate3d(var(--parallax-x, 0px), calc(var(--parallax-y, 0px) + var(--parallax-scroll, 0px) * -0.35), 0);
+}
+.parallax-grid {
+  inset: -80px -40px;
+  opacity: 0.1;
+  background-image: linear-gradient(rgba(130, 227, 241, 0.3) 1px, transparent 1px), linear-gradient(90deg, rgba(130, 227, 241, 0.3) 1px, transparent 1px);
+  background-size: 90px 90px;
+  mask-image: radial-gradient(ellipse at 80% 45%, black, transparent 60%);
+  transform: translate3d(calc(var(--parallax-x, 0px) * 1.8), calc(var(--parallax-y, 0px) * 1.8 + var(--parallax-scroll, 0px) * -0.65), 0);
+}
+@media (prefers-reduced-motion: reduce) {
+  .parallax-background > div { transform: none; }
+}

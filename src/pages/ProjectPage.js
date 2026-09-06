@@ -1,6 +1,7 @@
 import '../css/allProject.css';
 import projectData from '../Data/ProjectData';
 import { useState } from 'react';
+import TiltCard from '../component/TiltCard';
 
 const ProjectPage = ({ setPage }) => {
   const [activeTab, setActiveTab] = useState('project');
@@ -27,7 +28,7 @@ const ProjectPage = ({ setPage }) => {
 
         <div className="project-list">
           {projectData[activeTab].map((item, index) => (
-            <div className="project-card" key={index}>
+            <TiltCard className="project-card" key={`${activeTab}-${index}`}>
   <div>
     <div className="project-header">
       {item.type === 'github' && item.logo && (
@@ -48,7 +49,7 @@ const ProjectPage = ({ setPage }) => {
                   <span className="button-text">Visit Website</span>
                 </a>
               )}
-            </div>
+            </TiltCard>
           ))}
         </div>
       </div>

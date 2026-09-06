@@ -42,20 +42,19 @@
 
 .card {
   position: absolute;
-  background: var(--card);
-  border: 1px solid rgba(255, 255, 255, 0.14);
-  padding: 2rem;
-  border-radius: var(--radius);
   width: 300px;
   height: 80%;
   opacity: 0;
   transition: transform 0.6s ease, opacity 0.6s ease;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
   text-align: center;
   z-index: 0;
   color: var(--text);
-  backdrop-filter: blur(10px);
 }
+
+.project-preview { height: 100%; }
+.project-preview > .tilt-card-surface { padding: 2rem; }
+.project-preview .tilt-card-content { justify-content: center; gap: 0; }
+.carousel .nav:focus-visible, .see-all-button:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
 
 .card p {
   color: var(--muted);
@@ -77,6 +76,7 @@
 
 .card.left,
 .card.right {
+  pointer-events: none;
   opacity: 0.5;
   filter: blur(3px);
   z-index: 1;
@@ -141,4 +141,11 @@
   .card {
     width: 90%;
   }
+}
+
+@media (max-width: 480px) {
+  .project { padding: 24px 16px; }
+  .carousel { height: 320px; }
+  .card { width: calc(100% - 40px); height: 88%; }
+  .project-preview > .tilt-card-surface { padding: 1.25rem; }
 }

@@ -1,5 +1,6 @@
 import '../css/project.css';
 import { useEffect, useState } from 'react';
+import TiltCard from './TiltCard';
 
 const projects = [
     {
@@ -26,13 +27,27 @@ const projects = [
 
 const Project = ({ setPage }) => {
     const [index, setIndex] = useState(0);
+    const [hovered, setHovered] = useState(false);
+    const [focused, setFocused] = useState(false);
 
     useEffect(() => {
-        const interval = setInterval(() => {
-            setIndex(prev => (prev + 1) % projects.length);
-        }, 3000);
-        return () => clearInterval(interval);
-    }, []);
+        const preference = window.matchMedia('(prefers-reduced-motion: reduce)');
+        let interval;
+        const sync = () => {
+            clearInterval(interval);
+            if (!hovered && !focused && !preference.matches && !document.hidden) {
+                interval = setInterval(() => setIndex(prev => (prev + 1) % projects.length), 3000);
+            }
+        };
+        sync();
+        preference.addEventListener('change', sync);
+        document.addEventListener('visibilitychange', sync);
+        return () => {
+            clearInterval(interval);
+            preference.removeEventListener('change', sync);
+            document.removeEventListener('visibilitychange', sync);
+        };
+    }, [hovered, focused]);
 
     const prevSlide = () => setIndex((index - 1 + projects.length) % projects.length);
     const nextSlide = () => setIndex((index + 1) % projects.length);
@@ -41,8 +56,9 @@ const Project = ({ setPage }) => {
         <div className='project'>
             <h1 className='project-title'>Project</h1>
             <div className="project-section" id="projects">
-                <div className="carousel">
-                    <button className="nav left" onClick={prevSlide}>‹</button>
+                <div className="carousel" onMouseEnter={() => setHovered(true)} onMouseLeave={() => setHovered(false)}
+                    onFocusCapture={() => setFocused(true)} onBlurCapture={(event) => { if (!event.currentTarget.contains(event.relatedTarget)) setFocused(false); }}>
+                    <button className="nav left" aria-label="Previous project" onClick={prevSlide}>‹</button>
                     <div className="card-container">
                         {projects.map((project, i) => {
                             let className = 'card';
@@ -52,14 +68,16 @@ const Project = ({ setPage }) => {
                             else className += ' hidden';
 
                             return (
-                                <div key={i} className={className}>
+                                <div key={i} className={className} aria-hidden={i !== index}>
+                                  <TiltCard className="project-preview" enabled={i === index}>
                                     <h2 className='title-card'>{project.title}</h2>
                                     <p>{project.desc}</p>
+                                  </TiltCard>
                                 </div>
                             );
                         })}
                     </div>
-                    <button className="nav right" onClick={nextSlide}>›</button>
+                    <button className="nav right" aria-label="Next project" onClick={nextSlide}>›</button>
                 </div>
             </div>
             <div className="see-all-container">

@@ -1,52 +1,26 @@
 import '../css/home.css';
-import React, { useEffect, useState } from 'react';
+import { FiArrowDown, FiArrowUpRight } from 'react-icons/fi';
+import CameraHero from './camera/CameraHero';
+import ParallaxBackground from './ParallaxBackground';
 
-const Home = () => {
-  const [moved, setMoved] = useState(false);
-
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setMoved(true);
-    }, 2000);
-    return () => clearTimeout(timer);
-  }, []);
-
-    return (
-    <section className="home" id="home">
-      <div className="home-overlay">
+const Home = () => (
+  <section className="home" id="home" aria-labelledby="home-heading">
+    <ParallaxBackground />
+    <div className="home-overlay">
+      <div className="home-layout">
         <div className="home-content">
-          <div className="home-title name">
-            <h1 className={`V ${moved ? 'moved' : ''}`}>V</h1>
-            <h1 className={`aran ${moved ? 'visible' : ''}`}>aranyu</h1>
-            <h1 className={`L ${moved ? 'moved' : ''}`}>&nbsp;L</h1>
-            <h1 className={`eela ${moved ? 'visible' : ''}`}>eelasopin</h1>
-          </div>
+          <p className="home-eyebrow">JOEVRY / CREATIVE PORTFOLIO</p>
+          <h1 className="home-title" id="home-heading">Varanyu{' '}<span>Leelasopin<span className="home-period">.</span></span></h1>
           <div className="home-line" />
-          <p className="home-subtitle">Photographer . Software Engineer . Video Editor</p>
+          <p className="home-subtitle">Photographer · Software Engineer · Video Editor</p>
+          <p className="home-description">From a frame to a line of code.<br />Explore the things I build and the moments I capture.</p>
+          <a className="home-project-link" href="#projects">Explore projects <FiArrowUpRight aria-hidden="true" /></a>
         </div>
+        <CameraHero />
       </div>
-    </section>
-  );
-};
-//   return (
-//     <section className="home" id="home">
-//       <div className="home-overlay">
-//         <div className="home-content">
-//           <div className="home-title">
-//             <div class="name">
-//               <h1 class="V">V</h1>
-//               <h1 class="aran">aranyu</h1>
-//               <span></span>
-//               <h1 class="L">&nbsp;L</h1>
-//               <h1 class="eela">eelasopin</h1>
-//             </div>
-//           </div>
-//           <div className="home-line" />
-//           <p className="home-subtitle">Storyteller . Software Engineer . Video Editor</p>
-//         </div>
-//       </div>
-//     </section>
-//   );
-// };
+      <a className="home-scroll" href="#about"><FiArrowDown aria-hidden="true" /> A little more about me</a>
+    </div>
+  </section>
+);
 
 export default Home;

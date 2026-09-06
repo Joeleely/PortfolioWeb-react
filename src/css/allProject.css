@@ -70,28 +70,17 @@
 }
 
 .project-card {
-  background-color: var(--card);
-  border: 1px solid rgba(255, 255, 255, 0.14);
-  padding: 1.5rem;
-  border-radius: var(--radius);
   width: 250px;
+  max-width: 100%;
   min-height: 250px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  transition: transform 0.3s, box-shadow 0.3s;
-  backdrop-filter: blur(10px);
 }
+
+.project-card > .tilt-card-surface { padding: 1.5rem; min-height: 250px; }
 
 .project-content {
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
-}
-
-.project-card:hover {
-  transform: translateY(-5px);
-  box-shadow: var(--shadow);
 }
 
 .project-card h2 {
